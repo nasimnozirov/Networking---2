@@ -11,9 +11,9 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var authorLable: UILabel!
-   
+    
     var image: Image!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Networking.shared.fetchImage(from: image.download_url) { image in
@@ -21,7 +21,7 @@ class DetailsViewController: UIViewController {
         }
         authorLable.text = image.author
     }
-
-
+    
+    
 }
 

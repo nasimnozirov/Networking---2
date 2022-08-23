@@ -12,7 +12,4 @@ struct Image: Decodable {
     let download_url: String?
 }
 
-//// MARK: - FoodIngredients
-//struct FoodIngredients: Codable {
-//    let meals: [[String: String?]]
-//}
+

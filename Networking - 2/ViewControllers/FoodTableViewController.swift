@@ -8,9 +8,9 @@
 import UIKit
 
 class FoodTableViewController: UITableViewController {
-
+    
     private let url = "https://picsum.photos/v2/list"
-
+    
     var images: [Image] = []
     
     override func viewDidLoad() {
@@ -29,16 +29,16 @@ class FoodTableViewController: UITableViewController {
         guard let detailsVC = segue.destination as? DetailsViewController else { return }
         detailsVC.image = image
     }
-
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         images.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "food", for: indexPath)
-
+        
         let image = images[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = image.author
@@ -46,18 +46,4 @@ class FoodTableViewController: UITableViewController {
         cell.contentConfiguration = content
         return cell
     }
-    
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
